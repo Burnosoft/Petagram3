@@ -92,14 +92,6 @@ public class MainActivity extends AppCompatActivity{
 
             case R.id.mFavorites:
                 Intent intentFav = new Intent(this, Favorites.class);
-
-//                BaseDatos db = new BaseDatos(this);
-//                arrayListMascotasFav = db.obtenerTodosLosContactos();
-//
-//                Bundle bundle = new Bundle();
-//                bundle.putSerializable("objects", arrayListMascotasFav);
-//                intentFav.putExtras(bundle);
-
                 startActivity(intentFav);
                 break;
         }

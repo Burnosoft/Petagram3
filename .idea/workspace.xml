@@ -10,23 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe4a8028-015f-4005-8013-77593d6f1b21" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/usuario.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/db/BaseDatos.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/db/ConstantesBaseDatos.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/db/ConstructorMascotas.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/fragment/IRecyclerViewFragmentView.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/presentador/IRecyclerViewFragmentPresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/presentador/PerfilFragmentPresenter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/presentador/RecyclerViewFragmentPresenter.java" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/Favorites.java" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/Favorites.java" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/adapter/MascotaAdaptador.java" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/adapter/MascotaAdaptador.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/adapter/MascotaAdaptadorPerfil.java" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/adapter/PerfilAdaptador.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/fragment/PerfilFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/fragment/PerfilFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/fragment/ReciclerViewFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/fragment/ReciclerViewFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/pojo/Mascota.java" afterPath="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/pojo/Mascota.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/favorites_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/favorites_layout.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -131,7 +123,7 @@
       <file leaf-file-name="Favorites.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/Favorites.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
+            <state relative-caret-position="582">
               <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding>
                 <element signature="e#2311#2312#0" expanded="true" />
@@ -156,8 +148,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="98" column="47" lean-forward="false" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+            <state relative-caret-position="93">
+              <caret line="94" column="41" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -2213,8 +2205,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/db/ConstructorMascotas.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/favorites_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/pojo/Mascota.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/Favorites.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2538,7 +2530,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="714" extended-state="6" />
+    <frame x="1" y="23" width="1280" height="714" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -2555,14 +2548,14 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3306321" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39579967" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39579967" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2941,14 +2934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="98" column="47" lean-forward="false" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/db/ConstructorMascotas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -2967,9 +2952,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="94" column="41" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/diaz/bruno/petagram/Favorites.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
+        <state relative-caret-position="582">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
             <element signature="e#2311#2312#0" expanded="true" />
