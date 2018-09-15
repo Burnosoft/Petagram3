@@ -15,12 +15,12 @@ import diaz.bruno.petagram.CustomItemClickListener;
 import diaz.bruno.petagram.R;
 import diaz.bruno.petagram.pojo.Mascota;
 
-public class MascotaAdaptadorPerfil extends RecyclerView.Adapter<MascotaAdaptadorPerfil.MascotaViewHolder>{
+public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.MascotaViewHolder>{
 
     private  ArrayList<Mascota> mascotas;
-    private  CustomItemClickListener clickListener;
+    private CustomItemClickListener clickListener;
 
-    public MascotaAdaptadorPerfil(ArrayList<Mascota> mascotas) {
+    public PerfilAdaptador(ArrayList<Mascota> mascotas) {
         this.mascotas = mascotas;
     }
 
@@ -42,10 +42,9 @@ public class MascotaAdaptadorPerfil extends RecyclerView.Adapter<MascotaAdaptado
     @Override
     public void onBindViewHolder(@NonNull MascotaViewHolder mascotaViewHolder, int position) {   // obtiene objeto para reciclaje
         final Mascota mascota = mascotas.get(position);
-//        mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
-        mascotaViewHolder.imgFoto.setImageResource(R.drawable.perfil_perro);
-
+        mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
         mascotaViewHolder.tvLikes.setText(Integer.toString(mascota.getLikes()));
+
 
     }
 
@@ -59,14 +58,19 @@ public class MascotaAdaptadorPerfil extends RecyclerView.Adapter<MascotaAdaptado
 
     public class MascotaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private ImageView imgFoto;
+        private ImageView imgHueso2;
         private TextView tvLikes;
 
         public MascotaViewHolder(final View itemView) {
             super(itemView);
 
             imgFoto = (ImageView) itemView.findViewById(R.id.imgFoto);
+            imgHueso2 = (ImageView) itemView.findViewById(R.id.imgHueso2);
             tvLikes = (TextView) itemView.findViewById(R.id.tvLikes);
 
+//            itemView.setOnClickListener(this);
+//            tvLikes.bringToFront();
+//            imgHueso1.setOnClickListener(this);
 
     }
 

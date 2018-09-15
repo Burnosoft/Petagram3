@@ -5,15 +5,14 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.ArrayList;
 
-import diaz.bruno.petagram.adapter.MascotaAdaptador;
 import diaz.bruno.petagram.adapter.PageAdapter;
+import diaz.bruno.petagram.db.BaseDatos;
+import diaz.bruno.petagram.db.ConstructorMascotas;
 import diaz.bruno.petagram.fragment.PerfilFragment;
 import diaz.bruno.petagram.fragment.ReciclerViewFragment;
 import diaz.bruno.petagram.pojo.Mascota;
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity{
     private android.support.v7.widget.Toolbar miActionBar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-
+    private ArrayList<Mascota> arrayListMascotasFav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +92,14 @@ public class MainActivity extends AppCompatActivity{
 
             case R.id.mFavorites:
                 Intent intentFav = new Intent(this, Favorites.class);
+
+//                BaseDatos db = new BaseDatos(this);
+//                arrayListMascotasFav = db.obtenerTodosLosContactos();
+//
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("objects", arrayListMascotasFav);
+//                intentFav.putExtras(bundle);
+
                 startActivity(intentFav);
                 break;
         }

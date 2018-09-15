@@ -1,18 +1,24 @@
 package diaz.bruno.petagram.pojo;
 
-public class Mascota {
+import java.io.Serializable;
+
+public class Mascota implements Serializable{
 
 
 
     private String nombre;
     private int likes;
     private int foto;
-
+    private int id;
 
     public Mascota(int foto, String nombre, int likes) {
         this.nombre = nombre;
         this.likes = likes;
         this.foto = foto;
+    }
+
+    public Mascota() {
+
     }
 
     public String getNombre() {
@@ -37,5 +43,13 @@ public class Mascota {
 
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

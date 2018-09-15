@@ -1,6 +1,7 @@
 package diaz.bruno.petagram.adapter;
 
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,24 +9,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import diaz.bruno.petagram.CustomItemClickListener;
+import diaz.bruno.petagram.db.ConstructorMascotas;
 import diaz.bruno.petagram.pojo.Mascota;
 import diaz.bruno.petagram.R;
 
-public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder>{
+public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder> {
 
-    private  ArrayList<Mascota> mascotas;
+    private ArrayList<Mascota> mascotas;
     private CustomItemClickListener clickListener;
+    private Context context;
 
-    public MascotaAdaptador(ArrayList<Mascota> mascotas) {
+    public MascotaAdaptador(ArrayList<Mascota> mascotas, Context context) {
+
         this.mascotas = mascotas;
+        this.context = context;
     }
 
-    public void setClickListener(CustomItemClickListener clickListener)
-    {
+    public void setClickListener(CustomItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 
@@ -43,8 +48,12 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     public void onBindViewHolder(@NonNull MascotaViewHolder mascotaViewHolder, int position) {   // obtiene objeto para reciclaje
         final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
-        mascotaViewHolder.tvLikes.setText(Integer.toString(mascota.getLikes()));
         mascotaViewHolder.tvNombre.setText(mascota.getNombre());
+        ConstructorMascotas constructorMascotas = new ConstructorMascotas(context);
+//        int likes = constructorMascotas.obtenerLikesMascota(mascotas.get(position));
+//        likes = likes + 1;
+        mascotaViewHolder.tvLikes.setText(Integer.toString(constructorMascotas.obtenerLikesMascota(mascotas.get(position))));
+
 
     }
 
@@ -54,9 +63,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     }
 
 
-
-
-    public class MascotaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MascotaViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgFoto;
         private TextView tvNombre;
         private ImageView imgHueso1;
@@ -69,19 +76,24 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             tvNombre = (TextView) itemView.findViewById(R.id.tvNombre);
             imgHueso1 = (ImageView) itemView.findViewById(R.id.imgHueso1);
             tvLikes = (TextView) itemView.findViewById(R.id.tvLikes);
-
-//            itemView.setOnClickListener(this);
-//            tvLikes.bringToFront();
-            imgHueso1.setOnClickListener(this);
-
-    }
-
-        @Override
-        public void onClick(View view) {
-           if( clickListener != null)
-           {
-               clickListener.likeClicked(view,getAdapterPosition());
-           }
+            imgHueso1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (clickListener != null) {
+                        clickListener.likeClicked(view, getAdapterPosition());
+                    }
+                }
+            });
+//
+//
         }
+
+
     }
+
+//    public class actualizarContenido()
+//
+//    {
+//
+//    }
 }

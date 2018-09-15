@@ -9,20 +9,27 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import diaz.bruno.petagram.CustomItemClickListener;
 import diaz.bruno.petagram.R;
 import diaz.bruno.petagram.adapter.MascotaAdaptador;
+import diaz.bruno.petagram.adapter.PerfilAdaptador;
+import diaz.bruno.petagram.db.BaseDatos;
+import diaz.bruno.petagram.db.ConstructorMascotas;
 import diaz.bruno.petagram.pojo.Mascota;
+import diaz.bruno.petagram.presentador.IRecyclerViewFragmentPresenter;
+import diaz.bruno.petagram.presentador.RecyclerViewFragmentPresenter;
 
-public class ReciclerViewFragment extends android.support.v4.app.Fragment implements CustomItemClickListener{
+public class ReciclerViewFragment extends android.support.v4.app.Fragment implements CustomItemClickListener,IRecyclerViewFragmentView{
 
     private ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
     private CustomItemClickListener listener;
     private MascotaAdaptador adaptador;
+    private IRecyclerViewFragmentPresenter presenter;
 
     @Nullable
     @Override
@@ -32,42 +39,58 @@ public class ReciclerViewFragment extends android.support.v4.app.Fragment implem
 
         // traigo a objeto recyclerview
         listaMascotas = (RecyclerView) v.findViewById(R.id.rvMascotas);
-        // defino orientacion de recyclerviw
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        listaMascotas.setLayoutManager(llm);
-        //inicializo lista de mascotas
-        inicializarListaMascotas();
-        // inicializo adaptador
-        inicializarAdaptador();
-
+        presenter = new RecyclerViewFragmentPresenter(this, getContext());
+        BaseDatos db = new BaseDatos(getContext());
+        mascotas = db.obtenerTodosLosContactos();
         return v;
     }
 
 
-    public void inicializarAdaptador() {
-        adaptador = new MascotaAdaptador(mascotas);
-        listaMascotas.setAdapter(adaptador);
-        adaptador.setClickListener(this);
-
-
-    }
-
-    public void inicializarListaMascotas() {
-        mascotas = new ArrayList<Mascota>();
-
-        mascotas.add(new Mascota(R.drawable.puppy1, "Oso", 2));
-        mascotas.add(new Mascota(R.drawable.puppy2, "Milton", 5));
-        mascotas.add(new Mascota(R.drawable.puppy3, "Blacky", 4));
-        mascotas.add(new Mascota(R.drawable.puppy2, "Lucky", 1));
-        mascotas.add(new Mascota(R.drawable.puppy4, "Tom", 6));
-    }
-
     @Override
     public void likeClicked(View v, int position) {
 
+        // crea una instancia constructorMascotas para dar like y grabarlo
+        ConstructorMascotas constructorMascotas = new ConstructorMascotas(getContext());
+        constructorMascotas.darLikeMascota(mascotas.get(position));
+
+
+        Toast.makeText(getContext(), "Diste like a " + mascotas.get(position).getNombre(), Toast.LENGTH_SHORT).show();
+
         // sumo like y actualizo el valor en adaptador
-        mascotas.get(position).setLikes( mascotas.get(position).getLikes() + 1);
+        mascotas.get(position).setLikes( constructorMascotas.obtenerLikesMascota(mascotas.get(position)));
         adaptador.notifyDataSetChanged();
+
+    }
+
+    @Override
+    public void generarLinearLayout() {
+        // defino orientacion de recyclerviw
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        listaMascotas.setLayoutManager(llm);
+    }
+
+    @Override
+    public MascotaAdaptador crearAdaptadorMascota(ArrayList<Mascota> mascotas) {
+        adaptador = new MascotaAdaptador(mascotas, getActivity());
+        this.adaptador = adaptador;
+        return adaptador;
+    }
+
+    @Override
+    public PerfilAdaptador crearAdaptadorMascotaPerfil(ArrayList<Mascota> mascotas) {
+        return null;
+    }
+
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdaptador adaptador) {
+        listaMascotas.setAdapter(adaptador);
+        adaptador.setClickListener(this);
+    }
+
+    @Override
+    public void inicializarAdaptadorPerfilRV(PerfilAdaptador adaptador) {
+        //
     }
 }

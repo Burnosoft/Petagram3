@@ -1,4 +1,5 @@
 package diaz.bruno.petagram;
+import android.media.MediaActionSound;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -6,20 +7,27 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import diaz.bruno.petagram.adapter.MascotaAdaptador;
+import diaz.bruno.petagram.db.BaseDatos;
+import diaz.bruno.petagram.db.ConstructorMascotas;
 import diaz.bruno.petagram.pojo.Mascota;
+import diaz.bruno.petagram.presentador.IRecyclerViewFragmentPresenter;
 
 
-public class Favorites extends AppCompatActivity{
+public class Favorites extends AppCompatActivity implements IRecyclerViewFragmentPresenter{
 
     private ArrayList<Mascota> mascotas;
-    private RecyclerView listaMascotasFav;
+    private ArrayList<Mascota> cincoMascotasFav;
+    private RecyclerView recyclerViewMascotasFav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.favorites_layout);
+
+        recyclerViewMascotasFav = (RecyclerView) findViewById(R.id.rvMascotasFav);
 
         android.support.v7.widget.Toolbar miActionBar = (android.support.v7.widget.Toolbar) findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
@@ -28,56 +36,47 @@ public class Favorites extends AppCompatActivity{
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-//        miActionBar.setDisplayUseLogoEnabled(false);
-//        miActionBar.setDisplayHomeAsUpEnabled(true);
-//        miActionBar.setHomeButtonEnabled(true);
-        //setSupportActionBar(miActionBar);
+
+        int n,m=0,masAlto=0,max=0,likes=0;
+        BaseDatos db = new BaseDatos(this);
+        mascotas = db.obtenerTodosLosContactos();
+
+        cincoMascotasFav = new ArrayList<Mascota>();
+
+        // tenemos la arraylist, ahora debemos seleccionar los 5 mas votados
 
 
-        // traigo a objeto recyclerview
-        listaMascotasFav = (RecyclerView) findViewById(R.id.rvMascotas);
-        // defino orientacion de recyclerviw
-        LinearLayoutManager llm2 = new LinearLayoutManager(this);
+        for(n=0 ; n<5; n++)
+        {
+            for(m=0 ; m< mascotas.size() ; m++)
+            {
+                mascotas.get(m).setLikes(db.obtenerLikesMascota(mascotas.get(m)));
+                if(  mascotas.get(m).getLikes() > max)
+                {
+                    max = mascotas.get(m).getLikes();
+                    masAlto = m;
+                }
+            }
+            cincoMascotasFav.add(mascotas.get(masAlto));
+            mascotas.remove(masAlto);
+            max=0;
+        }
 
-        llm2.setOrientation(LinearLayoutManager.VERTICAL);
-        listaMascotasFav.setLayoutManager(llm2);
-        //inicializo lista de mascotas
-        inicializarListaMascotasFav();
-        // inicializo adaptador
-
-        inicializarAdaptador();
+        obtenerContactosBaseDatos();
     }
 
-
-    private void inicializarAdaptador() {
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
-        listaMascotasFav.setAdapter(adaptador);
-    }
-
-    private void inicializarListaMascotasFav() {
-        mascotas = new ArrayList<Mascota>();
-
-        mascotas.add(new Mascota(R.drawable.puppy4, "Tom", 6));
-        mascotas.add(new Mascota(R.drawable.puppy2, "Milton", 5));
-        mascotas.add(new Mascota(R.drawable.puppy3, "Blacky", 4));
-        mascotas.add(new Mascota(R.drawable.puppy1, "Oso", 2));
-        mascotas.add(new Mascota(R.drawable.puppy2, "Lucky", 1));
-
-    }
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-//                Intent intent = new Intent(this, MainActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                startActivity(intent);
-                finish();
-                break;
-            // Something else
-        }
-        return super.onOptionsItemSelected(item);
+    public void obtenerContactosBaseDatos() {
+        mostrarContactosRV();
     }
 
+    @Override
+    public void mostrarContactosRV() {
+        recyclerViewMascotasFav.setAdapter(new MascotaAdaptador(cincoMascotasFav, getBaseContext()));
+        LinearLayoutManager llm = new LinearLayoutManager(getBaseContext());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerViewMascotasFav.setLayoutManager(llm);
+    }
 }
